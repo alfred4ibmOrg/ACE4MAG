@@ -296,8 +296,9 @@ With the Toolkit you can build powerful and complex integration applications, se
 In this next section you will deploy the PING_Basic bar file created and tested in the toolkit in the last section to the Cloud Pak for Integration.  
 
 
-[ocp]
-1. Find the route in "integration" NS
+[ocp console]
+
+1. Find the CPD route in "integration" NS
 2. Find the secret in "integration" NS (something like idp admin - opaque)
 3. Login to the CPD
 4. At left panel, click Run - integration and Create Integration Dashboard with
@@ -305,12 +306,12 @@ In this next section you will deploy the PING_Basic bar file created and tested 
    b. Select "integration" NS and Tick the "accept" license, Click "Create"
 5. From left panel, Go back to "run - integration" 
 
+[ocp console]
 
-1\. This is the **CP4I Platform Navigator** page and shows all the capabilities  that are installed:
+4\. This is the **CP4I Platform Navigator** page and shows all the capabilities  that are installed:
 
-Find student(n) instances, and right click on  db-01-quikcstart **Integration Dashboard**.
+Click on  db-01-quikcstart **Integration Dashboard**.
 
-![alt text][pic37]
 
 5\. This will take you to the IBM App Connect Dashboard Home page.  Select the ***Create a server tile***
 
