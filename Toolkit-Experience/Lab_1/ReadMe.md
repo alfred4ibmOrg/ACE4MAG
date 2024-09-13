@@ -281,7 +281,7 @@ Create a BAR file in order to deploy the solution to the Cloud Pak for integrati
 
 ![alt text][pic32]
 
-4\. The bar is located at C:\workspaces\{{your_workspace}}\ .  We will upload this to the Cloud Pak for Integration in the next lab. 
+4\. The bar is located at C:\workspaces\\{{your_workspace}}\ .  We will upload this to the Cloud Pak for Integration in the next lab. 
 
 ![alt text][pic33]
 
