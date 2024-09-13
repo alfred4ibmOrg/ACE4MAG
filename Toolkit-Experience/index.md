@@ -1,3 +1,8 @@
+## Reserve Following Environments from IBM Techzone:
+1. CP4I 2023.2 - Base Installation (gen2)
+2. IBM App Connect Enterprise v12.0.12 Lab environment
+
+
 ## Multi-Style Integration with IBM App Connect Enterprise toolkit
 
 Get hands with toolkit and create a simple Ping flow and then test locally and deploy to the ACE runtime in CP4I.  
