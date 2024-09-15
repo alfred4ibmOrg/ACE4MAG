@@ -127,7 +127,7 @@ Click on the ModifyMessage Compute node and it shows we add a status of ‘done�
 
 In this section we use App Connect Designer to configure callable flows, to enable secure connectivity between flows running in IBM App Connect on IBM Cloud and in an integration server in your on-premises App Connect Enterprise.
 
-1\. Open a Firefox browser window and enter the Cluster Homepage that was provided to you by the instructor. The URL will take you to the CP4I Platform Navigator.
+1\. Open a Firefox browser window and enter the CPD Homepage that was provided to you by the instructor. The URL will take you to the CP4I Platform Navigator.
 The URL should look similar to this one which is to the chopper cluster: https://cpd-cp4i.apps.chopper.coc-ibm.com/zen/#/homepage
 
 **Note:** ***if you already have the CP4I Platform Navigator page open go to step 4***
@@ -141,13 +141,21 @@ The URL should look similar to this one which is to the chopper cluster: https:/
 
 ![alt text][pic15]
 
-4\. Click on the App Connect Designer link to take you to the designer dashboard.”
+
+4\. At Left panel -> Design -> Integration. Then Click on the App Connect Designer link to take you to the designer dashboard.”
+*** If no "app designer" instance yet, Go to step 5a first to ensure Switch Server is there. Then create App designer instance. ***
+*** After App designer is installed go to step 6 ***
 
 ![alt text][pic16]
 
 5\. Click on the Callable flows icon:
 
 ![alt text][pic17]
+
+5\.a\. If it is not there, create Switch Server from OCP console.
+* Go to OCP console -> chose Operators -> Installed Operator -> Open "App Connect
+* Find TAB called "switch server" and create Instance
+* All can be default but ensure to accept (tick) the license
 
 6\. This is the configure callable flow page.   Click on the Connect callable flows to get to the download page. 
 
