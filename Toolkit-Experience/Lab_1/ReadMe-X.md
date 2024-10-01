@@ -147,7 +147,7 @@ Note the **Example request** and **Responses**.
 
 For example **python**:
 
-![alt text][pic16]
+---- wrong picture ------
 
 5\. Click the “**Try it**” tab and then select the **Send** button (this will send the API request to the administration port on TEST_SERVER. The integration server will then shutdown: 
 
@@ -296,17 +296,18 @@ With the Toolkit you can build powerful and complex integration applications, se
 In this next section you will deploy the PING_Basic bar file created and tested in the toolkit in the last section to the Cloud Pak for Integration.  
 
 1\. Open a Firefox browser window and enter the Cluster Homepage that was provided to you by the instructor.   The URL will take you to the CP4I Platform Navigator.  
-The URL should look similar to this one which is to the chopper cluster:
+The URL should look similar to this one if it was to the chopper cluster:
 https://cpd-cp4i.apps.**chopper**.coc-ibm.com/zen/#/homepage
 
-2\. Select the Enterprise LDAP:
+<ocp console>
+1. ensure you are at integration Namespace
+2. Go to workload - secret and find "idp" and click the secret name, which will lead you to the next page to copy username/password of CPD
+3. Go to Network - Route and then find/open the CPD URL
+<ocp console>
+ 
+2\. Login to CPD URL with that username/password.
 
-![alt text][pic34]
-
-3\. When prompted use the username and password provided to you for this lab. 
-In this example we are using **chopper9**. 
-
-![alt text][pic35]
+3\. Just to get familiar with the UI, Try browse around the menu. 
 
 4\. This is the **CP4I Platform Navigator** page and shows all the capabilities  that are installed:
 
