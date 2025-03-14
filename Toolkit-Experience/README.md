@@ -1,7 +1,7 @@
 ## Reserve Following Environments from IBM Techzone:
-1. CP4I 2023.2 - Base Installation (gen2)
-2. IBM App Connect Enterprise v12.0.12 Lab environment
-
+1. IBM App Connect Enterprise v12.0.12 Lab environment
+==> Use Windows VM
+==> aceadmin/passw0rd
 
 ## Multi-Style Integration with IBM App Connect Enterprise toolkit
 
