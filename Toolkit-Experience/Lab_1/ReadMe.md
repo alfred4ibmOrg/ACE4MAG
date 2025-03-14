@@ -145,9 +145,8 @@ Note the **Example request** and **Responses**.
 
 ![alt text][pic15]
 
-For example **python**:
+For example click **python** and you will see the sample for PYTHON
 
-![alt text][pic16]
 
 5\. Click the “**Try it**” tab and then select the **Send** button (this will send the API request to the administration port on TEST_SERVER. The integration server will then shutdown: 
 
@@ -289,113 +288,6 @@ Create a BAR file in order to deploy the solution to the Cloud Pak for integrati
 [pic32]: images/32.png
 [pic33]: images/33.png
 
-# 3. Deploy the BAR file to Cloud Pak for Integration <a name="deploy_the_bar_file_to_cp4i"></a>
 
-With the Toolkit you can build powerful and complex integration applications, services, and APIs quickly and easily using a visual designer. Your integration solutions can be directly deployed to the Cloud Pak for Integration on IBM Cloud Pak running on-premises, in any cloud, or combinations of both. 
-
-In this next section you will deploy the PING_Basic bar file created and tested in the toolkit in the last section to the Cloud Pak for Integration.  
-
-
-[ocp console]
-
-1. Find the CPD route in "integration" NS
-2. Find the secret in "integration" NS (something like idp admin - opaque)
-3. Login to the CPD
-4. At left panel, click Run - integration and Create Integration Dashboard with
-   a. Quick start spec, Click "Next"
-   b. Select "integration" NS and Tick the "accept" license, Click "Create"
-5. From left panel, Go back to "run - integration" 
-
-[ocp console]
-
-4\. This is the **CP4I Platform Navigator** page and shows all the capabilities  that are installed:
-
-Click on  db-01-quikcstart **Integration Dashboard**.
-
-
-5\. This will take you to the IBM App Connect Dashboard Home page.  Select the ***Create a server tile***
-
-![alt text][pic39]
-
-6\. This will take you to the first step of creating an integration server.  We will select the Toolkit integration and clidk Next: (***We will cover the Designer Integration in other labs***)
-
-![alt text][pic40]
-
-7\. We will now select our BAR file either by drag and drop it or upload it.  Then click **next**
-
-![alt text][pic41]
-
-8\. The next page is for any configurations that need to be applied to the integration server.  For this one just click “**Next**”
-
-9\. Now we will use the UI to set all the details for this integration server.
-We will set the name to **is-toolkit1**, **Replicas** to **1** and then select **Create**
-
-![alt text][pic42]
-
-10\. This will take you to the Servers page.   You will see the integration server we just created and it will show Unavailable till the containers are started. 
-After a little bit refresh the page.  Once the server is up and running it will show as <span style="color: green">**Started**</span> 
-
-**Note:** This will take a few minutes to spin up the needed containers so move on to the next section and we will login to the OCP console to get the route to our service. 
-
-![alt text][pic43]
-
-[pic34]: images/34.png
-[pic35]: images/35.png
-[pic36]: images/36.png
-[pic37]: images/37.png
-[pic38]: images/38.png
-[pic39]: images/39.png
-[pic40]: images/40.png
-[pic41]: images/41.png
-[pic42]: images/42.png
-[pic43]: images/43.png
-
-## 3.1 Test PING Basic flow on CP4I <a name="test_ping_basic_flow_on_cp4i"></a>
-
-We will now test the PING_Base flow we just deployed to CP4I in the Integration Server.  First we will need to get the route to our service from the OCP console.
-
-[//]: # (<span style="color: red">*** **Note a request to make the url available from the ACE dashboard was made 2/18/2021** ***</span>)
-[//]: # (<span style="color: red">*** **For now we need to find the route from the OCP console to be used.** ***</span>)
-
-1\. Open a Firefox browser window and enter the OpenShift console (OCP) URL provided to you by the instructor.  
-
-
-2\. When prompted use the username and password provided to you for this lab. 
-In this example we are using **student(n)**. 
-
-![alt text][pic34a]
-
-
-3\. Now you will be in the OCP console for your userid.  On the left side menu click on the Networking drop down and select routes.  Make sure you userid (Project) is correct in the top.  In this example it is student(n).
-Scroll down to find your new server you created **is-toolkit-http** and click on that.  
-
-![alt text][pic34b]
-
-4\. Now once you are in the Route page you will see the **Location** which is what you will use to call the service.  Click on the copy next to the Location address to save it. 
-
-![alt text][pic34c]
-
-5\. You can go back to the App Connect Dashboard and check that the service is up and running.  
-
-![alt text][pic34d]
-
-6\. Now open a new firefox browser window and enter the the route address for you for your service you saved and append **PING_Basic** to it and enter.  
-
-**Note** in the example we are using techzone OpenShift cluster.
-
-![alt text][pic34e]
-
-7\. You should see something simialr to the following:
-
-![alt text][pic44]
-
-[pic34a]: images/34a.png
-[pic34b]: images/34b.png
-[pic34c]: images/34c.png
-[pic34d]: images/34d.png
-[pic34e]: images/34e.png
-[pic44]: images/44.png
-   
-[Return to main lab page](../index.md)
 
 # <span style="color:teal">END OF LAB GUIDE</span>
