@@ -35,4 +35,4 @@ A.  LAB 1. Content Transformation
 	    • The Multi-Protocol Gateway service configuration
 	    • Front-side protocol handlers
 	    • Configuring Processing Policies, Rules, and Actions
-      • Developing on XSLT to transform the content of the messages
+      	• Developing on XSLT to transform the content of the messages
