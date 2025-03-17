@@ -152,6 +152,7 @@ https://127.0.0.1:9090
 ```
 https://echo.free.beeceptor.com/
 ```
+(DO NOT FOLLOW THE VALUE IN THE IMAGE BELOW)
 
 ![](./images/DP-LAB3-00035.png)
 
@@ -271,7 +272,7 @@ https://echo.free.beeceptor.com/
 
 ![](./images/DP-LAB3-00069.png)
 
-**70.** Toggle the BASIC to ADVANCED
+**70.** Toggle the BASIC to ADVANCED. Also ensure INPUT and OUTPUT are same like IMAGE below.
 
 <img width="986" alt="image" src="https://github.com/user-attachments/assets/e4e7987c-cf2b-43e9-951d-c22f807cbe6d" />
 
