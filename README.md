@@ -1,3 +1,10 @@
+
+Diagram Architecture in Real Live
+
+<img width="1114" alt="image" src="https://github.com/user-attachments/assets/93b835cf-e605-4c52-aaeb-c75c09061c99" />
+
+
+
 1. IBM ACE Toolkit Experience
 
     A.  Lab 1 -  Basic PING flow with Toolkit 
