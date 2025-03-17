@@ -259,7 +259,7 @@ https://echo.free.beeceptor.com/
 
 ![](./images/DP-LAB3-00066.png)
 
-**67.**	Click on the **Home** button. Then, go to the **tools/files** folder. Select the XSL file.
+**67.**	Click on the **Download** Location button. Select the XSL file.
 (DO NOT FOLLOW THE VALUE IN THE IMAGE BELOW)
 ![](./images/DP-LAB3-00067.png)
 
