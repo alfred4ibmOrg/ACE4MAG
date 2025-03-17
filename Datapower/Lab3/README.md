@@ -10,7 +10,7 @@ Upon completing this lab, you will have a better understanding of:
 - Configuring Processing Policies, Rules, and Actions
 - Developing on XSLT to transform the content of the messages
 
-The following image shows the overall idea of this lab. There are REST clients which send requests and backends which are designed to process it. In the middle, there is a DataPower exposing REST facade against a web server as the backend. DataPower has a Multi-Protocol gateway service which accepts RESTful methods requests (GET, PUT, POST, DELETE) from the service consumer. Then, this service will transform the structure of the messages in both ways.
+The following image shows the overall idea of this lab. There are REST clients which send requests and backends which are designed to process it. In the middle, there is a DataPower exposing REST facade against a web server as the backend. DataPower has a Multi-Protocol gateway service which accepts RESTful methods requests (GET, PUT, POST, DELETE) from the service consumer. Then, this service will transform the structure of the messages in both ways. (IGNORE SOAP BOX AT IMAGE BELOW AS WE DONT USE SOAP CONVERTER FOR NOW)
 
 ![](./images/DP-MPGW-REST-SOAP.png)
 
@@ -271,20 +271,32 @@ https://echo.free.beeceptor.com/
 
 ![](./images/DP-LAB3-00069.png)
 
-**70.**	The file should be added automatically. Click on **Done** button.
+**70.** Toggle the BASIC to ADVANCED
+
+<img width="986" alt="image" src="https://github.com/user-attachments/assets/e4e7987c-cf2b-43e9-951d-c22f807cbe6d" />
+
+**71.00 ** Scroll down and Add on HTTP HEADER NAME and VALUE
+
+<img width="993" alt="image" src="https://github.com/user-attachments/assets/e38cacc5-6975-424f-973d-7c33a9a7242e" />
+
+**72.**	Click on **Done** button.
 
 ![](./images/DP-LAB3-00070.png)
 
+**73.**	A successful message should be displayed.
 
-**67.**	A successful message should be displayed.
+**74.** Click on the "Apply Policy".
 
-**99.**	Open a terminal, run the curl command to test the service. 
+<img width="1043" alt="image" src="https://github.com/user-attachments/assets/1c0bab1b-33c6-4437-b085-40227db5f1fc" />
+
+
+**74.**	Open a terminal inside the DP VM, run the curl command to test the service. Alternatively just use BROWSER inside the DP VM and open localhost:8000.
 
 ```
-[techzone@rhel9-base ~]$ curl -XGET -H "mag:awesome" https://echo.free.beeceptor.com 
+[techzone@rhel9-base ~]$ curl localhost:8000 
 ```
 
-Notice you have the cutomised key:value HEADER.
+Notice you have the customised key:value HEADER.
 
 **OPTIONAL**
 
