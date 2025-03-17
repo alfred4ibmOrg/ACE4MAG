@@ -1,6 +1,6 @@
 # LAB 3. Content Transformation
 
-In this lab, you will create a fully functional Multi-Protocol gateway service that will transform message from REST (JSON) to SOAP (XML) and from SOAP (XML) to REST (JSON).
+In this lab, you will create a fully functional Multi-Protocol gateway service that will transform message
 
 Upon completing this lab, you will have a better understanding of:
 
@@ -10,32 +10,15 @@ Upon completing this lab, you will have a better understanding of:
 - Configuring Processing Policies, Rules, and Actions
 - Developing on XSLT to transform the content of the messages
 
-The following image shows the overall idea of this lab. There are REST clients which send requests and backends which are designed to process SOAP. In the middle, there is a DataPower exposing REST facade against a SOAPful web service as the backend. DataPower has a Multi-Protocol gateway service which accepts RESTful methods requests (GET, PUT, POST, DELETE) from the service consumer. Then, this service will transform the structure of the messages in both ways: REST-SOAP and SOAP-REST.
+The following image shows the overall idea of this lab. There are REST clients which send requests and backends which are designed to process it. In the middle, there is a DataPower exposing REST facade against a web server as the backend. DataPower has a Multi-Protocol gateway service which accepts RESTful methods requests (GET, PUT, POST, DELETE) from the service consumer. Then, this service will transform the structure of the messages in both ways.
 
 ![](./images/DP-MPGW-REST-SOAP.png)
 
-**1.** The first step is to verify that the backend service is up and running. We will use a public web service from DataAccess as the backend in this lab. The web service allows the conversions from numbers to words (English). To validate the status of the backend, you will open a new terminal (command line) and run the next command.
+**1.** The first step is to verify that the backend service is up and running. We will use a public web service from public website to echo our HEADER as the backend in this lab.
 
-```
-curl -X POST --header "Content-Type: text/xml" --header "charset: utf-8" -d '<?xml version="1.0" encoding="utf-8"?> <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> <soap:Body> <NumberToWords xmlns="http://www.dataaccess.com/webservicesserver/"> <ubiNum>500</ubiNum> </NumberToWords> </soap:Body> </soap:Envelope>' https://www.dataaccess.com/webservicesserver/NumberConversion.wso
-```
+https://echo.free.beeceptor.com/
 
-**2.** The output should be like the following answer. The web service converts the number ‘500’ into words ‘five hundred’.
-
-```
-[techzone@rhel9-base ~]$ curl -X POST --header "Content-Type: text/xml" --header "charset: utf-8" -d '<?xml version="1.0" encoding="utf-8"?> <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"> <soap:Body> <NumberToWords xmlns="http://www.dataaccess.com/webservicesserver/"> <ubiNum>500</ubiNum> </NumberToWords> </soap:Body> </soap:Envelope>' https://www.dataaccess.com/webservicesserver/NumberConversion.wso
-<?xml version="1.0" encoding="utf-8"?>
-<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
-  <soap:Body>
-    <m:NumberToWordsResponse xmlns:m="http://www.dataaccess.com/webservicesserver/">
-      <m:NumberToWordsResult>five hundred </m:NumberToWordsResult>
-    </m:NumberToWordsResponse>
-  </soap:Body>
-</soap:Envelope>
-[techzone@rhel9-base ~]$
-```
-
-**3.** Now that you have verified that the service is accessible and operational, you are ready to configure a Multi-Protocol Gateway that will mediate between REST/JSON and SOAP/XML. Navigate your browser to the following secure URL:
+**3.** Now that you have verified that the service is accessible and operational, you are ready to configure a Multi-Protocol Gateway that will mediate between your curl HTTP request with that public website. Navigate your browser to the following secure URL:
 ```
 https://127.0.0.1:9090
 ```
@@ -56,7 +39,7 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00007.png)
 
-**8.** In the Multi-Protocol Gateway Name field, type: **NumberToWords_MPG**
+**8.** In the Multi-Protocol Gateway Name field, type: **test_MPG**
 
 ![](./images/DP-LAB3-00008.png)
 
@@ -64,7 +47,7 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00009.png)
 
-**10.** In the Name field, type: **NumberToWords-XMLManager**
+**10.** In the Name field, type: **test-XMLManager**
 
 ![](./images/DP-LAB3-00010.png)
 
@@ -72,7 +55,7 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00011.png)
 
-**12.** In the Name field, type: **NumberToWords-UserAgent.** Click the **Apply** button in the upper section of the form.
+**12.** In the Name field, type: **test-UserAgent.** Click the **Apply** button in the upper section of the form.
 
 ![](./images/DP-LAB3-00012.png)
 
@@ -92,11 +75,11 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00016.png)
 
-**17.** In the Policy Name field, type: **NumberToWords-StylePolicy.** Then, click the **Add** button to create processing rules.
+**17.** In the Policy Name field, type: **test-StylePolicy.** Then, click the **Add** button to create processing rules.
 
 ![](./images/DP-LAB3-00017.png)
 
-**18.** In the Rule Name field, type: **NumberToWords-StylePolicy_request.** In the Rule Direction dropdown, select the option: **Client to Server**
+**18.** In the Rule Name field, type: **test-StylePolicy_request.** In the Rule Direction dropdown, select the option: **Client to Server**
 
 ![](./images/DP-LAB3-00018.png)
 
@@ -108,7 +91,7 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00020.png)
 
-**21.** In the Name field, type: **NumberToWords-MatchingRule-All**
+**21.** In the Name field, type: **test-MatchingRule-All**
 
 ![](./images/DP-LAB3-00021.png)
 
@@ -140,7 +123,7 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00028.png)
 
-**29.**	In the Rule Name field, type: **NumberToWords-StylePolicy_response.** In the Rule Direction dropdown, select the option: **Server to Client.**
+**29.**	In the Rule Name field, type: **test-StylePolicy_response.** In the Rule Direction dropdown, select the option: **Server to Client.**
 
 ![](./images/DP-LAB3-00029.png)
 
@@ -148,7 +131,7 @@ https://127.0.0.1:9090
 
 ![](./images/DP-LAB3-00030.png)
 
-**31.**	In the Matching Rule dropdown, select: **NumberToWords-MatchingRule-All.** Then, click the **Done** button.
+**31.**	In the Matching Rule dropdown, select: **test-MatchingRule-All.** Then, click the **Done** button.
 
 ![](./images/DP-LAB3-00031.png)
 
@@ -167,7 +150,7 @@ https://127.0.0.1:9090
 **35.**	In the Default Backend URL field, type:
 
 ```
-https://www.dataaccess.com
+https://echo.free.beeceptor.com/
 ```
 
 ![](./images/DP-LAB3-00035.png)
@@ -176,7 +159,7 @@ https://www.dataaccess.com
 
 ![](./images/DP-LAB3-00036.png)
 
-**37.**	In the Name field, type: **NumberToWords-TLSClient**
+**37.**	In the Name field, type: **test-TLSClient**
 
 ![](./images/DP-LAB3-00037.png)
 
@@ -192,7 +175,7 @@ https://www.dataaccess.com
 
 ![](./images/DP-LAB3-00040.png)
 
-**41.**	In Response type field, select the option: **SOAP**
+**41.**	In Response type field, select the option: **PassThrough**
 
 ![](./images/DP-LAB3-00041.png)
 
@@ -228,7 +211,7 @@ https://www.dataaccess.com
 
 ![](./images/DP-LAB3-00050.png)
 
-**51.**	In Request type field, select the option: **JSON**
+**51.**	In Request type field, select the option: **Non-XML**
 
 ![](./images/DP-LAB3-00051.png)
 
@@ -255,22 +238,6 @@ https://www.dataaccess.com
 57.	In the rule sections, click on the Rule Name which has direction as “Client to Server”.
 
 ![](./images/DP-LAB3-00057.png)
-
-**58.**	Click on the **‘+’** button to add a new action.
-
-![](./images/DP-LAB3-00058.png)
-
-**59.**	Scroll down to the Advanced actions section, click on the **“Convert Query Params to XML”.**
-
-![](./images/DP-LAB3-00059.png)
-
-**60.**	Click the **“Convert Query Params to XML”** action to provide the configuration details.
-
-![](./images/DP-LAB3-00060.png)
-
-**61.**	Click on the Done button.
-
-![](./images/DP-LAB3-00061.png)
 
 **62.**	Click on the **‘+’** button to add a new action.
 
@@ -308,123 +275,19 @@ https://www.dataaccess.com
 
 ![](./images/DP-LAB3-00070.png)
 
-**71.**	Click on the **‘+’** button to add a new action.
 
-![](./images/DP-LAB3-00071.png)
+**67.**	A successful message should be displayed.
 
-**72.**	In the Advanced action section, click the **Method Rewrite** icon.
-
-![](./images/DP-LAB3-00072.png)
-
-**73.**	Click the **“Method Rewrite”** action to provide the configuration details.
-
-![](./images/DP-LAB3-00073.png)
-
-**74.**	In the list of Method, select the option: **POST.** Then, click on the **Done** button.
-
-![](./images/DP-LAB3-00074.png)
-
-**75.**	Click on the **Done** button.
-
-![](./images/DP-LAB3-00075.png)
-
-**76.**	Click on the **Apply Policy** button.
-
-![](./images/DP-LAB3-00076.png)
-
-**77.**	A successful message should be displayed.
-
-![](./images/DP-LAB3-00077.png)
-
-78.	In the rule sections, click on the Rule Name which has direction as “Server to Client”.
-
-![](./images/DP-LAB3-00078.png)
-
-**79.**	Click on the **‘+’** button to add a new action.
-
-![](./images/DP-LAB3-00079.png)
-
-**80.**	In the Actions section, click on the **Transform** icon.
-
-![](./images/DP-LAB3-00080.png)
-
-81.	Click the **“Transform”** action to provide the configuration details.
-
-![](./images/DP-LAB3-00081.png)
-
-82.	Click on the **“Upload Files”** button.
-
-![](./images/DP-LAB3-00082.png)
-
-83.	Click the **“Drag and drop files or click to upload”** link.
-
-![](./images/DP-LAB3-00083.png)
-
-84.	Click on the **Home** button. Then, go to the **tools/files** folder. Select the XSL file.
-
-![](./images/DP-LAB3-00084.png)
-
-**85.**	Click on the **Upload** button.
-
-![](./images/DP-LAB3-00085.png)
-
-**86.**	A successful message should be displayed.
-
-![](./images/DP-LAB3-00086.png)
-
-**87.**	The file should be added automatically. Click on **Done** button.
-
-![](./images/DP-LAB3-00087.png)
-
-**88.**	Click on the **‘+’** button to add a new action.
-
-![](./images/DP-LAB3-00088.png)
-
-**89.**	In the Actions section, click on the **Transform** icon.
-
-![](./images/DP-LAB3-00089.png)
-
-**90.**	In the Select a directory field, select **“store:///”.** Then, select the **“jsonx2json.xsl”** file. Click on the **Done** button.
-
-![](./images/DP-LAB3-00090.png)
-
-**91.**	Click on the **Done** button.
-
-![](./images/DP-LAB3-00091.png)
-
-**92.**	Click on the **Apply Policy** button.
-
-![](./images/DP-LAB3-00092.png)
-
-**93.**	A successful message should be displayed.
-
-![](./images/DP-LAB3-00093.png)
-
-**94.**	In the search field, type the word “file”. In the search results, locate and select: **File Management.**
-
-![](./images/DP-LAB3-00094.png)
-
-**95.**	In the local folder, click the three vertical dots to open the action menu. Then, click **Upload Files.**
-
-![](./images/DP-LAB3-00095.png)
-
-**96.**	Click on the **Home** button. Then, go to the **tools/files** folder. Select the XML file.
-
-![](./images/DP-LAB3-00096.png)
-
-**97.**	Click on the **Upload** button.
-
-![](./images/DP-LAB3-00097.png)
-
-**98.**	A successful message should be displayed.
-
-**99.**	Open a terminal, run the curl command to test the service. The output should be a JSON message with the conversion of the number to words. For example, 400 into four hundred.
+**99.**	Open a terminal, run the curl command to test the service. 
 
 ```
-[techzone@rhel9-base ~]$ curl --request GET http://127.0.0.1:8000/getNumberConversion?ubiNum=400
-{ "NumberToWordsResult":"four hundred " }
-[techzone@rhel9-base ~]$
-![image](https://media.github.ibm.com/user/75211/files/47c9effe-9878-4ec3-82fc-2a8af9c1ebfb)
+[techzone@rhel9-base ~]$ curl -XGET -H "mag:awesome" https://echo.free.beeceptor.com 
 ```
+
+Notice you have the cutomised key:value HEADER.
+
+**OPTIONAL**
+
+You can also add same "Transform" action in "Server to Client" RULE direction to Adding another customised HEADER from Datapower to your CLIENT (i.e web browser).
 
 **This is the end of lab 3. Congratulations!**
