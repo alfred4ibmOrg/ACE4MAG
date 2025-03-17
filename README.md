@@ -6,7 +6,7 @@
     B.  Lab 2 - Using JavaCompute Node to split up a large input file
 
 2. IBM MQ
-<br>
+
 <br>A.  Lab 1 - Introduction to IBM MQ.
     <br>Objectives for Lab 1
 	    <br>• Create Queue Managers.
@@ -17,9 +17,10 @@
 	    <br>• Use Filters
 <br>
 <br>B.  Lab 2 - Configuring the IBM MQ JMS Provider
-    <br>The purpose of this lab is to demonstrate some of the typical steps you will go through when configuring IBM MQ as a JMS provider. Some of the tasks that you will perform include:
-	<br>    • Configure the Administered objects that a JMS program typically requires. Administered objects are used to externalize Connection Factories and Destinations from the program. This allows JMS Applications to be portable between Messaging Providers by shielding the applications from provider-specific details.
+    <br><br>The purpose of this lab is to demonstrate some of the typical steps you will go through when configuring IBM MQ as a JMS provider. Some of the tasks that you will perform include:
+	<br><br>    • Configure the Administered objects that a JMS program typically requires. Administered objects are used to externalize Connection Factories and Destinations from the program. This allows JMS Applications to be portable between Messaging Providers by shielding the applications from provider-specific details.
 	    <br>• Define a Java Naming and Directory Interface (JNDI) directory. In this lab you will perform the following:
+     <br>
 		<br>      ○ Create a JNDI directory
 		    <br>  ○ Populate it with Connection Factory and Destination definitions
 		      <br>○ Use the MQ Explorer wizard to create corresponding MQ definitions
@@ -27,8 +28,7 @@
 <br>
 
 <br>3. IBM Datapower
-
-<br>A.  LAB 1. Content Transformation
+A.  LAB 1. Content Transformation
     <br>In this lab, you will create a fully functional Multi-Protocol gateway service that will transform message from REST (JSON) to SOAP (XML) and from SOAP (XML) to REST (JSON).
     <br>Upon completing this lab, you will have a better understanding of:
 	<br>    • How messages are processed
