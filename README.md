@@ -10,6 +10,9 @@ Diagram Architecture in Real Live
     
     B. Lab 2 - Using JavaCompute Node to split up a large input file
 
+   <img width="858" alt="image" src="https://github.com/user-attachments/assets/47855257-319a-4671-b33c-bff8134dae65" />
+
+
 2. IBM MQ
 
     A. Lab 1 - Introduction to IBM MQ.
@@ -36,6 +39,9 @@ Diagram Architecture in Real Live
         ○ Use the MQ Explorer wizard to create corresponding MQ definitions
         ○ Run one of the Java™ Message Service (JMS) sample programs from the command line to use those definitions to connect to MQ as a JMS provider and produce JMS messages
 
+<img width="811" alt="image" src="https://github.com/user-attachments/assets/6ca6460f-d34e-469d-b445-df71449d2361" />
+
+
 3. IBM Datapower
 
     A. LAB 1. Content Transformation
@@ -52,3 +58,6 @@ Diagram Architecture in Real Live
     • Configuring Processing Policies, Rules, and Actions
     
     • Developing on XSLT to transform the content of the messages
+
+   <img width="814" alt="image" src="https://github.com/user-attachments/assets/d7c08791-5c10-477f-8184-05238fc38b2f" />
+
