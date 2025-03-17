@@ -28,6 +28,7 @@
 <br>
 
 <br>3. IBM Datapower
+<br>
 A.  LAB 1. Content Transformation
     <br>In this lab, you will create a fully functional Multi-Protocol gateway service that will transform message from REST (JSON) to SOAP (XML) and from SOAP (XML) to REST (JSON).
     <br>Upon completing this lab, you will have a better understanding of:
