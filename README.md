@@ -6,15 +6,15 @@ Diagram Architecture in Real Live
 
 
 1. IBM ACE Toolkit Experience
-
-    A.  Lab 1 -  Basic PING flow with Toolkit 
-        This is a basic toolkit lab that you will create a simple Ping flow and then test locally and deploy to the ACE runtime. 
-
-    B.  Lab 2 - Using JavaCompute Node to split up a large input file
-
+<br>
+<t>A. Lab 1 -  Basic PING flow with Toolkit 
+<t>This is a basic toolkit lab that you will create a simple Ping flow and then test locally and deploy to the ACE runtime. 
+<br>
+<t>B. Lab 2 - Using JavaCompute Node to split up a large input file
+<br>
 2. IBM MQ
-
-<br>A.  Lab 1 - Introduction to IBM MQ.
+<br>
+<t>A.  Lab 1 - Introduction to IBM MQ.
     <br>Objectives for Lab 1
 	    <br>• Create Queue Managers.
 	    <br>• Work with Queues (create, test, browse.delete)
