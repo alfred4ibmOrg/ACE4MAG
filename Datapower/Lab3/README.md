@@ -175,8 +175,8 @@ https://echo.free.beeceptor.com/
 
 ![](./images/DP-LAB3-00040.png)
 
-**41.**	In Response type field, select the option: **PassThrough**
-
+**41.**	In Response type field, select the option: **PassThrough** 
+(DO NOT FOLLOW THE VALUE IN THE IMAGE BELOW)
 ![](./images/DP-LAB3-00041.png)
 
 **42.**	In Front side settings section, click the **‘+’** button.
@@ -212,7 +212,7 @@ https://echo.free.beeceptor.com/
 ![](./images/DP-LAB3-00050.png)
 
 **51.**	In Request type field, select the option: **Non-XML**
-
+(DO NOT FOLLOW THE VALUE IN THE IMAGE BELOW)
 ![](./images/DP-LAB3-00051.png)
 
 **52.**	Click the **Apply** button in the upper section of the form to activate this new configuration.
@@ -240,7 +240,7 @@ https://echo.free.beeceptor.com/
 ![](./images/DP-LAB3-00057.png)
 
 **62.**	Click on the **‘+’** button to add a new action.
-
+(IGNORE the BOX NAMED "CONVERT" IN THE IMAGE BELOW)
 ![](./images/DP-LAB3-00062.png)
 
 **63.**	In the Actions section, click on the **Transform** icon.
@@ -260,7 +260,7 @@ https://echo.free.beeceptor.com/
 ![](./images/DP-LAB3-00066.png)
 
 **67.**	Click on the **Home** button. Then, go to the **tools/files** folder. Select the XSL file.
-
+(DO NOT FOLLOW THE VALUE IN THE IMAGE BELOW)
 ![](./images/DP-LAB3-00067.png)
 
 **68.**	Click on the **Upload** button.
