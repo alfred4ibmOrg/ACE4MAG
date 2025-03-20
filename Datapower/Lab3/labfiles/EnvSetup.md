@@ -1,14 +1,19 @@
 # sudo su -
 # setenforce 0
 # cd /home/ibmuser/datapower/labs/lab2/completed
-# Yum update crun
-# docker run -it \
-  -v $PWD/config:/drouter/config \
-  -v $PWD/local:/drouter/local \
-  -e DATAPOWER_ACCEPT_LICENSE=true \
-  -e DATAPOWER_INTERACTIVE=true \
-  -p 9090:9090 \
- -p 8000:8000 \
-  --name idg \
-  --cpus="2" --memory="4g" \
-  icr.io/cpopen/datapower/datapower-limited:10.6.0.0
+
+# Update crun
+yum update crun
+
+# RUN DOCKER
+
+docker run -it \ 
+  <br>-v $PWD/config:/drouter/config \\
+  <br>-v $PWD/local:/drouter/local \\
+  <br>-e DATAPOWER_ACCEPT_LICENSE=true \\
+  <br>-e DATAPOWER_INTERACTIVE=true \\
+  <br>-p 9090:9090 \\
+  <br>-p 8000:8000 \\
+  <br>--name idg \\
+  <br>--cpus="2" --memory="4g" \\
+  <br>icr.io/cpopen/datapower/datapower-limited:10.6.0.0
