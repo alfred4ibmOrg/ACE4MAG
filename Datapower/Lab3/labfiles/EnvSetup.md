@@ -17,3 +17,15 @@ docker run -it \
   <br>--name idg \\
   <br>--cpus="2" --memory="4g" \\
   <br>icr.io/cpopen/datapower/datapower-limited:10.6.0.0
+<br>
+# Activate web-mgmt UI
+<br>
+<br>login : admin/admin
+<br>idg# conf
+<br>idg(config)#web-mgmt
+<br>idg(config web-mgmt)# admin-state enabled
+<br>idg(config web-mgmt)# exit
+<br>idg(config)# write mem
+<br>idg(config)# show web-mgmt
+<br>[CTRL][p][q]
+<br>
